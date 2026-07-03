@@ -1,0 +1,19 @@
+{
+  "nombre": "María Camila",
+  "frase": "La flor más nueva del jardín",
+  "fechaNacimiento": "",
+  "peso": "",
+  "talla": "",
+  "lugar": "",
+  "mensajePapas": "",
+  "fotoPapas": "",
+  "calendarioURL": "",
+  "fotos": [
+    { "archivo": "ejemplo.jpg", "pie": "Borra esta línea cuando subas tus fotos reales" }
+  ],
+  "actividades": [
+    { "fecha": "2026-07-02", "hora": "16:30", "emoji": "💩", "texto": "Me hice popó. Misión cumplida" },
+    { "fecha": "2026-07-02", "hora": "14:00", "emoji": "😴", "texto": "Siesta profesional de 3 horas" },
+    { "fecha": "2026-07-02", "hora": "09:15", "emoji": "🍼", "texto": "Desayuno buffet: leche ilimitada" }
+  ]
+}

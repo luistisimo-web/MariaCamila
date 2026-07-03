@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>María Camila 🌸</title>
+<meta name="description" content="El jardín digital de María Camila: fotos, aventuras de recién nacida y citas para conocerla." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐝</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; }
+  body { min-height:100vh; margin:0; background:linear-gradient(180deg,#FDF9F0 0%, #FBF3E4 100%);
+    font-family:'Nunito Sans',sans-serif; color:#5A4A33; overflow-x:hidden; }
+  .abeja { position:fixed; z-index:5; pointer-events:none; animation: volar 18s ease-in-out infinite; opacity:.8; }
+  @keyframes volar { 0%,100%{transform:translate(0,0) rotate(0)} 25%{transform:translate(46px,-34px) rotate(7deg)} 50%{transform:translate(-24px,22px) rotate(-5deg)} 75%{transform:translate(32px,12px) rotate(3deg)} }
+  .ala { animation: aletear .28s ease-in-out infinite alternate; }
+  .ala2 { animation: aletear2 .28s ease-in-out infinite alternate; }
+  @keyframes aletear { from{transform:rotate(0)} to{transform:rotate(-14deg)} }
+  @keyframes aletear2 { from{transform:rotate(0)} to{transform:rotate(14deg)} }
+  @media (prefers-reduced-motion: reduce){ .abeja,.ala,.ala2{animation:none} }
+  header { text-align:center; padding:64px 16px 10px; }
+  h1 { font-family:'Cormorant Garamond',serif; font-weight:600; font-size: clamp(2.8rem, 8vw, 4.6rem); color:#9C5A1E; margin:0; letter-spacing:1px; }
+  .frase { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.25rem; color:#A98B5E; margin-top:8px; }
+  .divisor { width:120px; height:1px; background:linear-gradient(90deg,transparent,#D8B45A,transparent); margin:18px auto 0; position:relative; }
+  .divisor::after { content:"❀"; position:absolute; top:-11px; left:50%; transform:translateX(-50%); color:#E2A6BF; font-size:.9rem; }
+  nav { display:flex; justify-content:center; gap:6px; flex-wrap:wrap; padding:22px 12px; position:sticky; top:0; background:#FDF9F0e6; backdrop-filter:blur(8px); z-index:10; border-bottom:1px solid #F0E2C4; }
+  nav button { border:1px solid #E3CD9C; background:transparent; color:#8A6D3B; font-family:'Nunito Sans'; font-weight:700;
+    padding:9px 20px; border-radius:999px; cursor:pointer; font-size:.9rem; letter-spacing:.4px; transition:.2s; }
+  nav button:hover, nav button:focus-visible { background:#F7ECD3; outline:none; box-shadow:0 0 0 3px #D8B45A33; }
+  nav button.act { background:#9C5A1E; border-color:#9C5A1E; color:#FDF9F0; }
+  main { max-width:880px; margin:0 auto; padding: 20px 18px 100px; }
+  .card { background:#FFFEFA; border-radius:26px; padding:34px 30px; box-shadow:0 10px 34px #9C5A1E10; border:1px solid #F2E6C9; margin-bottom:22px; }
+  h2 { font-family:'Cormorant Garamond',serif; font-weight:600; color:#9C5A1E; font-size:1.9rem; margin:0 0 18px; display:flex; align-items:center; gap:12px; }
+  h3 { font-family:'Cormorant Garamond',serif; font-weight:600; color:#9C5A1E; }
+  .grid-datos { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:14px; }
+  .dato { background:linear-gradient(160deg,#FBF3E1,#F8ECD6); border:1px solid #F0E0BC; border-radius:18px; padding:18px 14px; text-align:center; }
+  .dato span { display:block; font-size:.72rem; text-transform:uppercase; letter-spacing:2px; color:#A98B5E; margin-bottom:6px; }
+  .dato b { display:block; font-family:'Cormorant Garamond',serif; font-size:1.5rem; color:#9C5A1E; }
+  .galeria { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:16px; }
+  .polaroid { background:#fff; border:1px solid #EFE3C8; border-radius:14px; padding:9px 9px 12px; box-shadow:0 5px 16px #5A4A3312; transform:rotate(var(--r,0deg)); transition:.25s; margin:0; }
+  .polaroid:hover { transform:rotate(0) scale(1.035); box-shadow:0 10px 26px #5A4A331f; }
+  .polaroid img { width:100%; aspect-ratio:1; object-fit:cover; border-radius:9px; display:block; }
+  .pie { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1rem; margin-top:8px; color:#7A6547; text-align:center; }
+  .timeline { list-style:none; margin:0; padding:0 0 0 8px; border-left:2px solid #EBD9AE; }
+  .timeline li { position:relative; padding:0 0 20px 28px; line-height:1.5; }
+  .timeline li::before { content:""; position:absolute; left:-8px; top:4px; width:12px; height:12px; background:#E2A6BF; border-radius:50%; border:3px solid #FFFEFA; box-shadow:0 0 0 1.5px #E2A6BF; }
+  .hora { font-weight:700; color:#9C5A1E; margin-right:8px; font-variant-numeric:tabular-nums; }
+  .btn { background:#9C5A1E; border:none; color:#FDF9F0; font-weight:700; font-family:'Nunito Sans'; padding:12px 26px; border-radius:999px; cursor:pointer; font-size:.95rem; letter-spacing:.4px; transition:.2s; box-shadow:0 4px 14px #9C5A1E33; text-decoration:none; display:inline-block; }
+  .btn:hover { background:#7E4715; transform:translateY(-1px); }
+  .btn.sec { background:#E2A6BF; color:#5A2740; box-shadow:0 4px 14px #E2A6BF44; }
+  .btn.mini { padding:5px 12px; font-size:.72rem; background:#F8E3EC; color:#A5527C; box-shadow:none; }
+  .foto-papas { width:100%; max-width:440px; border-radius:22px; display:block; margin:0 auto 16px; border:8px solid #fff; box-shadow:0 12px 32px #5A4A3322; }
+  .vacio { text-align:center; color:#A98B5E; padding:34px; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.15rem; }
+  .msg-papas { text-align:center; font-size:1.1rem; }
+  .cita-box { text-align:center; background:#F8ECD6; border-radius:20px; padding:34px 20px; }
+  .cita-box p.lead { font-size:1.15rem; margin:0 0 6px; font-weight:800; color:#9C5A1E; }
+  .cita-box p.sub { margin:0 0 18px; color:#8A6D3B; }
+  .cita-box p.min { font-size:.8rem; color:#A98B5E; margin-top:14px; }
+  section[hidden], div[hidden] { display:none !important; }
+  /* modo papás */
+  .modo { position:fixed; top:14px; right:14px; z-index:20; }
+  input[type=text], input[type=date], input[type=time], input[type=url], input[type=password], select, textarea {
+    border:1px solid #E3CD9C; border-radius:12px; padding:11px 13px; font-family:'Nunito Sans'; font-size:.95rem; background:#FFFDF8; color:#5A4A33; }
+  input:focus, select:focus, textarea:focus { outline:none; border-color:#9C5A1E; box-shadow:0 0 0 3px #D8B45A26; }
+  label.small { font-size:.72rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#A98B5E; display:block; margin:12px 0 5px; }
+  .fila { display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+  .overlay { position:fixed; inset:0; background:#3E2E1599; z-index:60; display:grid; place-items:center; padding:20px; }
+  .panel-papas { background:#FFF8EC; border:2px dashed #D8B45A; border-radius:20px; padding:22px; margin-bottom:22px; }
+  .panel-papas h4 { font-family:'Cormorant Garamond',serif; color:#9C5A1E; font-size:1.3rem; margin:0 0 4px; }
+  .paso { background:#FFFEFA; border:1px solid #F0E0BC; border-radius:14px; padding:14px 16px; margin-top:12px; }
+  .paso b { color:#9C5A1E; }
+  .aviso { position:fixed; bottom:22px; left:50%; transform:translateX(-50%); background:#5A4A33; color:#FDF3DD; padding:12px 26px; border-radius:999px; z-index:70; font-weight:600; box-shadow:0 8px 24px #0003; }
+  .w100 { width:100%; }
+</style>
+</head>
+<body>
+
+<button class="btn mini modo" id="btnModo">✏️ Modo papás</button>
+
+<div class="overlay" id="pinOverlay" hidden>
+  <div class="card" style="max-width:320px;width:100%;text-align:center;margin-bottom:0">
+    <h2 style="justify-content:center">🔒 PIN de papás</h2>
+    <input type="password" id="pinInput" inputmode="numeric" maxlength="4" class="w100"
+      style="text-align:center;font-size:1.6rem;letter-spacing:8px" />
+    <p id="pinError" style="color:#C0392B;font-weight:800;margin:8px 0 0" hidden>PIN incorrecto 🐝</p>
+    <div class="fila" style="justify-content:center;margin-top:16px">
+      <button class="btn" id="pinEntrar">Entrar</button>
+      <button class="btn sec" id="pinCancelar">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<header>
+  <div id="floresTitulo" style="display:flex;justify-content:center;gap:6px;"></div>
+  <h1 id="nombre">María Camila</h1>
+  <p class="frase" id="frase"></p>
+  <div class="divisor"></div>
+</header>
+
+<nav aria-label="Secciones">
+  <button data-tab="inicio" class="act">🌸 Acerca de mí</button>
+  <button data-tab="papas">💛 Mis papás</button>
+  <button data-tab="galeria">📸 Galería</button>
+  <button data-tab="agenda">🗓️ Mi agenda</button>
+  <button data-tab="citas">🐝 Ven a conocerme</button>
+</nav>
+
+<main>
+  <!-- Panel de edición (solo modo papás) -->
+  <div class="panel-papas" id="panelPapas" hidden>
+    <h4>✏️ Panel de papás</h4>
+    <p style="margin:0;font-size:.9rem;color:#8A6D3B">Edita lo que quieras abajo — los cambios se ven al instante en la página.
+      Cuando termines, sigue los <b>2 pasos para guardar</b> al final de este panel.</p>
+
+    <label class="small">Nombre</label>
+    <input type="text" id="edNombre" class="w100" />
+    <label class="small">Frase bonita</label>
+    <input type="text" id="edFrase" class="w100" />
+    <div class="fila">
+      <div style="flex:1;min-width:150px"><label class="small">Fecha de nacimiento</label><input type="date" id="edFecha" class="w100" /></div>
+      <div style="flex:1;min-width:120px"><label class="small">Peso</label><input type="text" id="edPeso" class="w100" placeholder="3.2 kg" /></div>
+      <div style="flex:1;min-width:120px"><label class="small">Talla</label><input type="text" id="edTalla" class="w100" placeholder="50 cm" /></div>
+      <div style="flex:1;min-width:150px"><label class="small">Lugar</label><input type="text" id="edLugar" class="w100" placeholder="Colima, México" /></div>
+    </div>
+    <label class="small">Mensaje de los papás</label>
+    <input type="text" id="edMsgPapas" class="w100" />
+    <label class="small">Archivo de la foto de los papás (debe existir en la carpeta fotos/)</label>
+    <input type="text" id="edFotoPapas" class="w100" placeholder="familia.jpg" />
+    <label class="small">Enlace de citas de Google Calendar</label>
+    <input type="url" id="edCalendario" class="w100" placeholder="https://calendar.google.com/..." />
+
+    <label class="small">➕ Agregar actividad</label>
+    <div class="fila">
+      <select id="acEmoji">
+        <option>🍼</option><option>😴</option><option>💩</option><option>🛁</option><option>😍</option>
+        <option>👶</option><option>🎵</option><option>🌸</option><option>🐝</option><option>😭</option>
+        <option>🤱</option><option>📸</option>
+      </select>
+      <input type="date" id="acFecha" />
+      <input type="time" id="acHora" />
+      <input type="text" id="acTexto" style="flex:1;min-width:180px" placeholder='"Me hice popó, misión cumplida"' />
+      <button class="btn" id="acAgregar">Publicar</button>
+    </div>
+
+    <label class="small">➕ Agregar foto a la galería (primero súbela a la carpeta fotos/ en GitHub)</label>
+    <div class="fila">
+      <input type="text" id="ftArchivo" style="flex:1;min-width:160px" placeholder="nombre-foto.jpg" />
+      <input type="text" id="ftPie" style="flex:1;min-width:160px" placeholder="Pie de foto" />
+      <button class="btn" id="ftAgregar">Agregar</button>
+    </div>
+
+    <div class="paso">
+      <b>Para guardar tus cambios (2 pasos):</b>
+      <div class="fila" style="margin-top:10px">
+        <button class="btn" id="btnCopiar">1️⃣ Copiar archivo actualizado</button>
+        <a class="btn sec" id="btnGitHub" href="#" target="_blank" rel="noreferrer">2️⃣ Abrir datos.json en GitHub</a>
+      </div>
+      <p style="font-size:.85rem;color:#8A6D3B;margin:10px 0 0">
+        En GitHub: borra todo el contenido del archivo, pega lo copiado (Ctrl+V) y presiona el botón verde
+        <b>Commit changes</b>. En un minuto la página pública se actualiza. 🌸</p>
+    </div>
+  </div>
+
+  <section id="tab-inicio" class="card">
+    <h2>Acerca de mí</h2>
+    <div class="grid-datos" id="datosGrid"></div>
+  </section>
+
+  <section id="tab-papas" class="card" hidden>
+    <h2>💛 Mis papás</h2>
+    <div id="papasContenido"></div>
+  </section>
+
+  <section id="tab-galeria" class="card" hidden>
+    <h2>📸 Mi galería</h2>
+    <div class="galeria" id="galeria"></div>
+    <p class="vacio" id="galeriaVacia" hidden>Todavía no hay fotos… ¡las abejitas están esperando! 🐝</p>
+  </section>
+
+  <section id="tab-agenda" class="card" hidden>
+    <h2>🗓️ Mi agenda de bebé ocupada</h2>
+    <div id="agenda"></div>
+  </section>
+
+  <section id="tab-citas" class="card" hidden>
+    <h2>🐝 Ven a conocerme</h2>
+    <p>Mi agenda social está muy solicitada. ¡Reserva tu turno para venir a apapacharme! 🌷</p>
+    <div id="citasContenido"></div>
+  </section>
+</main>
+
+<div class="aviso" id="aviso" hidden></div>
+
+<script>
+// ⚙️ CONFIGURACIÓN — cambia esto si tu usuario o repositorio es distinto
+const GITHUB_USUARIO = "luistisimo-web";
+const GITHUB_REPO = "mariacamila";
+const PIN = "4492";
+
+// ——— Decoración: abejas y flores ———
+function svgAbeja() {
+  const u = Math.random().toString(36).slice(2);
+  return `<svg width="46" height="40" viewBox="0 0 60 52">
+    <defs>
+      <radialGradient id="bb${u}" cx="40%" cy="35%"><stop offset="0%" stop-color="#FFD766"/><stop offset="60%" stop-color="#E8A61B"/><stop offset="100%" stop-color="#B87709"/></radialGradient>
+      <radialGradient id="bh${u}" cx="40%" cy="35%"><stop offset="0%" stop-color="#5A4327"/><stop offset="100%" stop-color="#241708"/></radialGradient>
+      <linearGradient id="bw${u}" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FFF" stop-opacity=".95"/><stop offset="100%" stop-color="#BFD9EE" stop-opacity=".45"/></linearGradient>
+    </defs>
+    <g class="ala" style="transform-origin:30px 18px">
+      <ellipse cx="22" cy="12" rx="13" ry="7.5" fill="url(#bw${u})" stroke="#9FBAD1" stroke-width=".6" transform="rotate(-28 22 12)"/>
+      <path d="M13 16 Q22 10 31 9 M16 18 Q23 14 30 13" stroke="#9FBAD1" stroke-width=".5" fill="none" opacity=".7" transform="rotate(-28 22 12)"/>
+    </g>
+    <g class="ala2" style="transform-origin:30px 18px">
+      <ellipse cx="38" cy="12" rx="13" ry="7.5" fill="url(#bw${u})" stroke="#9FBAD1" stroke-width=".6" transform="rotate(28 38 12)"/>
+      <path d="M29 16 Q38 10 47 9 M32 18 Q39 14 46 13" stroke="#9FBAD1" stroke-width=".5" fill="none" opacity=".7" transform="rotate(28 38 12)"/>
+    </g>
+    <ellipse cx="30" cy="30" rx="17" ry="12.5" fill="url(#bb${u})"/>
+    <path d="M22 19.5 Q20 30 22 40.5" stroke="#2B1C08" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M31 18 Q29.5 30 31 42" stroke="#2B1C08" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+    <path d="M40 20.5 Q39 30 40 39.5" stroke="#2B1C08" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+    <g stroke="#FFE18A" stroke-width=".8" opacity=".65" stroke-linecap="round">
+      <path d="M17 23 l-2.5 -2 M18 28 l-3 -.5 M18 33 l-2.5 1.5 M26 18.5 l-1 -2.5 M35 18.5 l1 -2.5 M43 24 l2.5 -2 M44 31 l3 0 M42 37 l2.5 2"/>
+    </g>
+    <circle cx="12.5" cy="28" r="6.5" fill="url(#bh${u})"/>
+    <circle cx="10.5" cy="26" r="1.4" fill="#FFF" opacity=".85"/>
+    <path d="M9 23 Q6 18 3.5 17.5 M13 22 Q12 16.5 9.5 15" stroke="#241708" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+    <circle cx="3.5" cy="17.5" r="1.1" fill="#241708"/><circle cx="9.5" cy="15" r="1.1" fill="#241708"/>
+    <path d="M46.5 31 L51 32.5" stroke="#241708" stroke-width="1.6" stroke-linecap="round"/>
+    <g stroke="#241708" stroke-width="1.3" fill="none" stroke-linecap="round"><path d="M22 41 q-1 4 -4 5.5 M30 42.5 q0 4 -2.5 6 M38 41 q1.5 4 4.5 5"/></g>
+  </svg>`;
+}
+function svgFlor(size, color) {
+  const u = Math.random().toString(36).slice(2);
+  const osc = color === "#E88BB0" ? "#C95E8E" : color === "#F5C6D8" ? "#E39BB8" : "#D77FA4";
+  let traseros = "", frontales = "", estambres = "";
+  [36,108,180,252,324].forEach(a => traseros += `<path transform="rotate(${a} 30 30)" fill="${osc}" opacity=".7" d="M30 30 C24 22, 24 10, 30 5 C36 10, 36 22, 30 30 Z"/>`);
+  [0,72,144,216,288].forEach(a => frontales += `<g transform="rotate(${a} 30 30)">
+    <path fill="url(#p${u})" stroke="${osc}" stroke-width=".4" d="M30 30 C22 24, 20 12, 26 6 Q30 9 30 9 Q30 9 34 6 C40 12, 38 24, 30 30 Z"/>
+    <path d="M30 28 Q29 16 28.5 9 M30 28 Q31 16 31.5 9" stroke="${osc}" stroke-width=".45" fill="none" opacity=".5"/></g>`);
+  [0,45,90,135,180,225,270,315].forEach(a => {
+    const r=5.2, x=30+r*Math.cos(a*Math.PI/180), y=30+r*Math.sin(a*Math.PI/180);
+    estambres += `<circle cx="${x}" cy="${y}" r=".9"/>`;
+  });
+  return `<svg width="${size}" height="${size}" viewBox="0 0 60 60" aria-hidden="true">
+    <defs>
+      <radialGradient id="p${u}" cx="50%" cy="15%"><stop offset="0%" stop-color="#FFF4F8"/><stop offset="55%" stop-color="${color}"/><stop offset="100%" stop-color="${osc}"/></radialGradient>
+      <radialGradient id="c${u}" cx="42%" cy="38%"><stop offset="0%" stop-color="#FFE9A8"/><stop offset="70%" stop-color="#F0B429"/><stop offset="100%" stop-color="#C98A0E"/></radialGradient>
+    </defs>
+    <g opacity=".85">${traseros}</g>${frontales}
+    <circle cx="30" cy="30" r="7.5" fill="url(#c${u})"/>
+    <g fill="#8A5E07">${estambres}<circle cx="30" cy="30" r="1.1"/></g>
+  </svg>`;
+}
+[["12%","4%",0],["30%",null,4,"5%"],[null,"8%",8,null,"18%"]].forEach(([top,left,delay,right,bottom]) => {
+  const d = document.createElement("div");
+  d.className = "abeja"; d.setAttribute("aria-hidden","true");
+  if (top) d.style.top = top; if (left) d.style.left = left;
+  if (right) d.style.right = right; if (bottom) d.style.bottom = bottom;
+  d.style.animationDelay = (delay||0) + "s";
+  d.innerHTML = svgAbeja();
+  document.body.appendChild(d);
+});
+document.getElementById("floresTitulo").innerHTML =
+  svgFlor(40,"#F2A9C4") + svgFlor(52,"#E88BB0") + svgFlor(40,"#F5C6D8");
+
+// ——— Navegación ———
+document.querySelectorAll("nav button").forEach(b => {
+  b.addEventListener("click", () => {
+    document.querySelectorAll("nav button").forEach(x => x.classList.remove("act"));
+    b.classList.add("act");
+    document.querySelectorAll("main section").forEach(s => s.hidden = true);
+    document.getElementById("tab-" + b.dataset.tab).hidden = false;
+  });
+});
+
+// ——— Estado y render ———
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+let datos = null;
+let modoPapas = false;
+
+function notificar(msg) {
+  const a = document.getElementById("aviso");
+  a.textContent = msg; a.hidden = false;
+  setTimeout(() => a.hidden = true, 2600);
+}
+
+function render() {
+  const d = datos;
+  document.getElementById("nombre").textContent = d.nombre || "María Camila";
+  document.title = (d.nombre || "María Camila") + " 🌸";
+  document.getElementById("frase").textContent = d.frase || "";
+
+  const fechaTxt = d.fechaNacimiento
+    ? new Date(d.fechaNacimiento + "T12:00").toLocaleDateString("es-MX", { day:"numeric", month:"long", year:"numeric" })
+    : "Muy pronto 🌟";
+  document.getElementById("datosGrid").innerHTML = [
+    ["Nací el", fechaTxt], ["Peso", d.peso || "—"], ["Talla", d.talla || "—"], ["Lugar", d.lugar || "—"]
+  ].map(([l,v]) => `<div class="dato"><span>${l}</span><b>${esc(v)}</b></div>`).join("");
+
+  let ph = "";
+  if (d.fotoPapas) ph += `<img class="foto-papas" src="fotos/${esc(d.fotoPapas)}" alt="Mis papás"/>`;
+  else ph += `<p class="vacio">Aquí va la foto de mis papás consentidores 🌻</p>`;
+  if (d.mensajePapas) ph += `<p class="msg-papas">${esc(d.mensajePapas)}</p>`;
+  document.getElementById("papasContenido").innerHTML = ph;
+
+  const fotos = (d.fotos || []).filter(f => f.archivo && f.archivo !== "ejemplo.jpg");
+  document.getElementById("galeriaVacia").hidden = !!fotos.length;
+  document.getElementById("galeria").innerHTML = fotos.map((f,i) =>
+    `<figure class="polaroid" style="--r:${(i%3)-1}deg">
+      <img src="fotos/${esc(f.archivo)}" alt="${esc(f.pie || 'Foto')}" loading="lazy"/>
+      <figcaption class="pie">${esc(f.pie || "🌸")}</figcaption>
+      ${modoPapas ? `<button class="btn mini w100" style="margin-top:6px" onclick="quitarFoto(${i})">Quitar de la página</button>` : ""}
+    </figure>`).join("");
+
+  const porDia = {};
+  (d.actividades || []).forEach((a,idx) => (porDia[a.fecha] = porDia[a.fecha] || []).push({...a, idx}));
+  const dias = Object.keys(porDia).sort((a,b) => b.localeCompare(a));
+  document.getElementById("agenda").innerHTML = dias.length ? dias.map(dia => `
+    <h3>${new Date(dia + "T12:00").toLocaleDateString("es-MX", { weekday:"long", day:"numeric", month:"long" })}</h3>
+    <ul class="timeline">${porDia[dia].sort((a,b) => b.hora.localeCompare(a.hora)).map(a =>
+      `<li><span class="hora">${esc(a.hora)}</span>${esc(a.emoji || "")} ${esc(a.texto)}
+      ${modoPapas ? ` <button class="btn mini" onclick="quitarActividad(${a.idx})">✕</button>` : ""}</li>`).join("")}
+    </ul>`).join("") : `<p class="vacio">Agenda vacía… por ahora solo duermo 😴</p>`;
+
+  document.getElementById("citasContenido").innerHTML = d.calendarioURL ? `
+    <div class="cita-box">
+      <div style="display:flex;justify-content:center;gap:8px;margin-bottom:10px">
+        ${svgFlor(34,"#F2A9C4")}${svgFlor(44,"#E88BB0")}${svgFlor(34,"#F5C6D8")}
+      </div>
+      <p class="lead">Mi carnet de visitas está abierto 🐝</p>
+      <p class="sub">Elige el día y la hora que más te acomode, y mis papás recibirán tu reservación.</p>
+      <a class="btn" style="font-size:1.1rem;padding:14px 32px" href="${esc(d.calendarioURL)}" target="_blank" rel="noreferrer">🗓️ Reservar mi visita</a>
+      <p class="min">Se abrirá la agenda en una pestaña nueva</p>
+    </div>` : `<p class="vacio">Los papás pronto activarán las citas 🗓️</p>`;
+}
+
+// funciones globales para los botones de quitar
+window.quitarFoto = (i) => { datos.fotos.splice(i, 1); render(); notificar("Foto quitada — recuerda guardar 📋"); };
+window.quitarActividad = (i) => { datos.actividades.splice(i, 1); render(); notificar("Actividad quitada — recuerda guardar 📋"); };
+
+// ——— Modo papás ———
+const pinOverlay = document.getElementById("pinOverlay");
+const panelPapas = document.getElementById("panelPapas");
+
+document.getElementById("btnModo").addEventListener("click", () => {
+  if (modoPapas) { salirModoPapas(); return; }
+  pinOverlay.hidden = false;
+  document.getElementById("pinInput").value = "";
+  document.getElementById("pinError").hidden = true;
+  document.getElementById("pinInput").focus();
+});
+document.getElementById("pinCancelar").addEventListener("click", () => pinOverlay.hidden = true);
+pinOverlay.addEventListener("click", (e) => { if (e.target === pinOverlay) pinOverlay.hidden = true; });
+function verificarPin() {
+  if (document.getElementById("pinInput").value === PIN) {
+    pinOverlay.hidden = true; entrarModoPapas();
+  } else {
+    document.getElementById("pinError").hidden = false;
+    document.getElementById("pinInput").value = "";
+  }
+}
+document.getElementById("pinEntrar").addEventListener("click", verificarPin);
+document.getElementById("pinInput").addEventListener("keydown", e => { if (e.key === "Enter") verificarPin(); });
+
+function entrarModoPapas() {
+  modoPapas = true;
+  document.getElementById("btnModo").textContent = "👀 Ver como visitante";
+  panelPapas.hidden = false;
+  // llenar formularios
+  document.getElementById("edNombre").value = datos.nombre || "";
+  document.getElementById("edFrase").value = datos.frase || "";
+  document.getElementById("edFecha").value = datos.fechaNacimiento || "";
+  document.getElementById("edPeso").value = datos.peso || "";
+  document.getElementById("edTalla").value = datos.talla || "";
+  document.getElementById("edLugar").value = datos.lugar || "";
+  document.getElementById("edMsgPapas").value = datos.mensajePapas || "";
+  document.getElementById("edFotoPapas").value = datos.fotoPapas || "";
+  document.getElementById("edCalendario").value = datos.calendarioURL || "";
+  const hoy = new Date();
+  document.getElementById("acFecha").value = hoy.toISOString().slice(0,10);
+  document.getElementById("acHora").value = hoy.toTimeString().slice(0,5);
+  render();
+  notificar("Modo papás activado 💛");
+}
+function salirModoPapas() {
+  modoPapas = false;
+  document.getElementById("btnModo").textContent = "✏️ Modo papás";
+  panelPapas.hidden = true;
+  render();
+}
+
+// edición en vivo de campos
+[["edNombre","nombre"],["edFrase","frase"],["edFecha","fechaNacimiento"],["edPeso","peso"],
+ ["edTalla","talla"],["edLugar","lugar"],["edMsgPapas","mensajePapas"],
+ ["edFotoPapas","fotoPapas"],["edCalendario","calendarioURL"]].forEach(([id,campo]) => {
+  document.getElementById(id).addEventListener("input", e => { datos[campo] = e.target.value.trim(); render(); });
+});
+
+document.getElementById("acAgregar").addEventListener("click", () => {
+  const texto = document.getElementById("acTexto").value.trim();
+  if (!texto) return;
+  datos.actividades.unshift({
+    fecha: document.getElementById("acFecha").value,
+    hora: document.getElementById("acHora").value,
+    emoji: document.getElementById("acEmoji").value,
+    texto
+  });
+  document.getElementById("acTexto").value = "";
+  render();
+  notificar("¡Actividad publicada! Recuerda guardar 📋");
+});
+document.getElementById("acTexto").addEventListener("keydown", e => {
+  if (e.key === "Enter") document.getElementById("acAgregar").click();
+});
+
+document.getElementById("ftAgregar").addEventListener("click", () => {
+  const archivo = document.getElementById("ftArchivo").value.trim();
+  if (!archivo) return;
+  datos.fotos.unshift({ archivo, pie: document.getElementById("ftPie").value.trim() });
+  document.getElementById("ftArchivo").value = "";
+  document.getElementById("ftPie").value = "";
+  render();
+  notificar("Foto agregada — recuerda subirla a fotos/ y guardar 📋");
+});
+
+// guardar: copiar json y abrir github
+document.getElementById("btnGitHub").href =
+  `https://github.com/${GITHUB_USUARIO}/${GITHUB_REPO}/edit/main/datos.json`;
+
+document.getElementById("btnCopiar").addEventListener("click", async () => {
+  const texto = JSON.stringify(datos, null, 2);
+  try {
+    await navigator.clipboard.writeText(texto);
+    notificar("¡Copiado! Ahora ábrelo en GitHub y pégalo 📋✅");
+  } catch {
+    // respaldo si el portapapeles está bloqueado
+    const ta = document.createElement("textarea");
+    ta.value = texto; document.body.appendChild(ta);
+    ta.select(); document.execCommand("copy"); ta.remove();
+    notificar("¡Copiado! Ahora ábrelo en GitHub y pégalo 📋✅");
+  }
+});
+
+// ——— Carga inicial ———
+fetch("datos.json?v=" + Date.now())
+  .then(r => r.json())
+  .then(d => {
+    d.fotos = d.fotos || []; d.actividades = d.actividades || [];
+    datos = d; render();
+  })
+  .catch(() => {
+    document.getElementById("datosGrid").innerHTML =
+      `<p class="vacio">No se pudo leer datos.json — revisa que el archivo exista y no tenga errores de formato.</p>`;
+  });
+</script>
+</body>
+</html>
